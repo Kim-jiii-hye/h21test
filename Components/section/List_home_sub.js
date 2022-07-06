@@ -15,13 +15,13 @@ export default function List_home_sub(){
         <h4 className="hidden">한겨레21 List</h4>
         <div className="table_home_sub">
             <div className="row_home_sub row_home_sub_B">
-                <div className={`cell_home_sub cell_home_sub_R`}  style={{width:"25%"}} >
+                <div className={`cell_home_sub cell_home_sub_R ${styles.home_sub_comp}`}>
                     <Item_home_sub homesubdata={ main_sub_data[0] } />
                 </div>
-                <div className={`cell_home_sub cell_home_sub_R`} style={{width:"25%"}}>
+                <div className={`cell_home_sub cell_home_sub_R ${styles.home_sub_comp}`}>
                     <Item_home_sub homesubdata={ main_sub_data[1] } />
                 </div>
-                <div className={`cell_home_sub cell_home_sub_R`} style={{width:"25%"}}>
+                <div className={`cell_home_sub cell_home_sub_R ${styles.home_sub_comp}`}>
                     <Item_home_sub homesubdata={ main_sub_data[2] } />
                 </div>
                 <div className="cell_home_sub cell_home_sub_subscription">
