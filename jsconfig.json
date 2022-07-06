@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/Seo/*": ["Components/seo/*"],
+        "@/Components/*": ["Components/*"],
+        "@/section/*": ["Components/section/*"],
+        "@/item/*": ["Components/item/*"],
+        "@/lib/*": ["lib/*"],
+        "@/styles/*": ["styles/*"]
+      }
+    }
+  }
+  
