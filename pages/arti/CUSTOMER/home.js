@@ -1,4 +1,5 @@
 import HeaderVer2 from "@/Components/HeaderVer2";
+import Navigation_section1 from "@/Components/section/Navigation_section1";
 import MainSeo from "@/Components/seo/MainSeo";
 import Link from "next/link";
 
@@ -10,6 +11,7 @@ export default function home() {
             <div className="main0">
                 <div className="main1">
                     <HeaderVer2 />
+                    <Navigation_section1 />
                     <div id="customer_contents" className="etc_contents">
                         <div className="contents0">
                             <div className="contents1">

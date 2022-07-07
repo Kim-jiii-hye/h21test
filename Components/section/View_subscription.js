@@ -1,6 +1,8 @@
 import Link from "next/link";
+import useSWR from 'swr'
+export default function View_subscription() {
 
-export default function View_subscription({ bookdata }) {
+    const bookdata = useSWR('/api/book');
 
     const current_book = bookdata.data[0];
     const past_book = bookdata.data[1]

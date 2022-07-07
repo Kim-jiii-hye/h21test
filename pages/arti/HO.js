@@ -1,4 +1,5 @@
 import HeaderVer2 from "@/Components/HeaderVer2";
+import Navigation_section1 from "@/Components/section/Navigation_section1";
 import MainSeo from "@/Components/seo/MainSeo";
 
 export default function HO () {
@@ -9,6 +10,7 @@ export default function HO () {
             <div className="main0">
                 <div className="main1">
                     <HeaderVer2 />
+                    <Navigation_section1 />
                     <div id="magazineSlide">
                         <div className="left" style={{ top: 220, left: 30, width: 40 }}>
                             {/* <img src={//img.hani.co.kr/section-image/15/h21/image/arrow_left.png"}	alt="이전호보기"/> */}

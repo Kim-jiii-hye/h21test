@@ -7,7 +7,7 @@ export default function List_home_sub(){
 
     const { data } = useSWR('/api/main');
     const main_sub_data = data.data.top.slice(7, data.data.top.length);
-    const bookdata = useSWR('/api/book');
+    
 
     return (
         <section id="section_home_sub" className="home_sub">
@@ -25,7 +25,7 @@ export default function List_home_sub(){
                     <Item_home_sub homesubdata={ main_sub_data[2] } />
                 </div>
                 <div className="cell_home_sub cell_home_sub_subscription">
-                    <View_subscription bookdata={ bookdata }/>
+                    <View_subscription />
                 </div>
             </div>
             <div className="row_home_sub row_home_sub_B">

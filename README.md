@@ -19,6 +19,10 @@
 * Main에서 사용하는 Header 디자인
 * Main페이지 이외에서 사용하는 Header 디자인
 
+#### Navigation version
+* Navigation_section2는 기사 관련 페이지에서 사용 / 1은 그 외
+* Navigation_series는 이슈 연재에서 사용
+
 #### commonly used
 * Sitemap 
 
