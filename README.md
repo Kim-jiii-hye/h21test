@@ -1,14 +1,32 @@
-Nextjs page h21
+# Nextjs page h21
 
-##### Components directory
-* view/section/item 
+
+### pages directory
+#### arti
+* HO / RSS 는 지난호보기, RSS 페이지로 각각 존재
+##### INTRODUCTION
+* 소개페이지로 현재는 1, 2, 3 .html 존재
+* dynamic import로 내용들은 Components/section 디렉토리에서 가져옴
+
+---------------------------------------------------------------------------------
+
+### Components directory
+* view/section/item
 * seo는 페이지별로 다를 수 있음
- * (ex.메인용 seo, 기사본문용 seo)
-* Main Header version, Other Header version (HeaderVer2.js) and commonly used Footer Sitemap
+    * (ex.메인용 seo, 기사본문용 seo)
+    * meta 태그 내용 변경은 props 계획
+#### Header version
+* Main에서 사용하는 Header 디자인
+* Main페이지 이외에서 사용하는 Header 디자인
 
-##### lib directory
+#### commonly used
+* Sitemap 
+
+---------------------------------------------------------------------------------
+
+### lib directory
 * constants.js에 전역변수로 사용되는 링크 선언
 
-##### styles directory
+### styles directory
 * Componentst.module.css 기존에 태그에 지정된 style 속성들을 모아놓음
 * 스타일 분리 목적.

@@ -1,7 +1,7 @@
 import { SVC_PATH } from "@/lib/constants";
 import Link from "next/link";
 import Image_thumbnail from "@/item/Image_thumbnail";
-import Image from "next/image";
+import Image from "next/future/image";
 
 export default function Item_home_main({ homemaindata }) {
 
@@ -26,7 +26,7 @@ export default function Item_home_main({ homemaindata }) {
                                         <Link href={ titleheaderurl }>
                                             <a>
                                                 { titleheader }
-                                                <Image src={arrow_right} width={5} height={10}/>
+                                                <Image src={arrow_right} width={5} height={10} layout="raw" />
                                             </a>
                                         </Link>
                                         : <>추가필요</>
