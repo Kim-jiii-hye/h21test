@@ -66,8 +66,8 @@ export default function Sitemap() {
 						</li>
                         <li	className="column">
 							<ul	className="column">
-								<li><strong><Link href="/arti/CUSTOMER/home.html"><a>고객센터</a></Link></strong></li>
-								<li><span><Link href="/arti/CUSTOMER/sub.html"><a>자주하는 질문(FAQ)</a></Link></span></li>
+								<li><strong><Link href="/arti/CUSTOMER/home"><a>고객센터</a></Link></strong></li>
+								<li><span><Link href="/arti/CUSTOMER/sub"><a>자주하는 질문(FAQ)</a></Link></span></li>
 								<li><span><a href="//notice.hani.co.kr/h21/opinion" target="popwin_share">독자문의</a></span></li>
 							</ul>
 						</li>
