@@ -11,16 +11,6 @@ export default function RSS() {
             <div className="main0">
                 <div className="main1">
                     <HeaderVer2 />
-                    <nav id="navigation_section">
-                        <div className="navigation0">
-                            <div className="navigation1">
-                                <span className="path_not_last">
-                                    <Link href="/"><a>HOME</a></Link>
-                                </span> &gt;
-                                <span className="path_last">RSS</span>
-                            </div>
-                        </div>
-                    </nav>
                     <div id="introduction_contents" className="etc_contents_menu">
                         <div className="contents0">
                             <div className="menu">
