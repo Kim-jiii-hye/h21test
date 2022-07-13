@@ -22,7 +22,7 @@ export default function Item_article({ list }) {
                         <div className="group0">
                             <div className="group1">
                                 {/* 경우에 따라 나오고 안나오고 체크 필요 */}
-                                {/* <Link href={`${url}`}><a>sectionname</a></Link> */}
+                                {/* <Link href={`${url}`}><a></a></Link> */}
                             </div>
                         </div>
                         <div className="title0">

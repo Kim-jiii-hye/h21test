@@ -5,6 +5,7 @@ import List_home_main from "@/section/List_home_main";
 import List_home_ad from "@/section/List_home_ad";
 import List_home_sub from "@/section/List_home_sub";
 import Image from "next/image";
+import View_search_form from "../section/View_search_form";
 const ViewHome = () => {
 
     const { data } = useSWR('/api/main');
@@ -31,6 +32,7 @@ const ViewHome = () => {
                                         <span>후원하기</span>
                                     </a>
                                 </div>
+                                <View_search_form />
                             </div>
                         </div>
                     </div>
