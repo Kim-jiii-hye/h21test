@@ -5,10 +5,6 @@ export default function Item_series({ list }) {
 
     const outsidedata = list.data;
 
-    const url = outsidedata.seriessn;
-    const ho = outsidedata.ho_st;
-    const title = outsidedata.title;
-
     return (
         <>
             {
