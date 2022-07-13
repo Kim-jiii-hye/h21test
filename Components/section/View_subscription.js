@@ -10,6 +10,10 @@ export default function View_subscription() {
     const c_coverimg = current_book.coverimg;
     const c_ho = current_book.ho;
     const c_date = current_book.startdt;
+    let date;
+    if(c_date.length == 8){
+        date = c_date.replace(/(\d{4})(\d{2})(\d{2})/, '$1.$2.$3');
+    }
 
     const p_ho = past_book.ho;
 
@@ -26,7 +30,7 @@ export default function View_subscription() {
                         <div className="text0">
                             <div className="info0">
                                 <div className="magazine_no">제 {c_ho}호</div>
-                                <div className="date">{ c_date }</div>
+                                <div className="date">{ date }</div>
                                 <div className="list"><Link href={`/arti/HO/${c_ho}.html`}>차례보기</Link></div>
                             </div>
                             <div className="link0">

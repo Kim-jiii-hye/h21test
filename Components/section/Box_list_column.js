@@ -15,7 +15,7 @@ export default function Box_list_column() {
             <ul className="dot_title">
                 {
                     column_list.map((i, index) => (
-                        <Dot_title title={i.title} url={i.url} />
+                        <Dot_title title={i.title} url={i.url} key={index} />
                     ))
                 }
 
