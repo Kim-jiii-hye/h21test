@@ -7,7 +7,6 @@ export default function List_rank_title({ rank, index }) {
     const num = index + 1;
 
     return (
-        <li>
             <article className="rank_title">
                 <div className="rank0">
                     <div className="rank1">
@@ -20,6 +19,5 @@ export default function List_rank_title({ rank, index }) {
                     </div>
                 </div>
             </article>
-        </li>
     )
 }

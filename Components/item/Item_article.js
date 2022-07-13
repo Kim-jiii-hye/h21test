@@ -1,34 +1,43 @@
+import Link from "next/link";
 import Image_thumbnail from "./Image_thumbnail";
 
-export default function Item_article() {
+export default function Item_article({ list }) {
+
+    const ho = list.ho;
+    const img = list.img;
+    const prologue = list.prologue;
+    const title = list.title;
+    const url = list.url;
+     
     return (
-        <article class="item_article">
-            <div class="article0">
-                <div class="article1">
-                    <div class="image0">
-                        <div class="image1">
-                            <a href=""><Image_thumbnail /></a>
+        <article className="item_article">
+            <div className="article0">
+                <div className="article1">
+                    <div className="image0">
+                        <div className="image1">
+                            <Link href={`${url}`}><a><Image_thumbnail imagedata={img}/></a></Link>
                         </div>
                     </div>
-                    <div class="image_on">
-                        <div class="group0">
-                            <div class="group1">
-                                <a href="">secname</a>
+                    <div className="image_on">
+                        <div className="group0">
+                            <div className="group1">
+                                {/* 경우에 따라 나오고 안나오고 체크 필요 */}
+                                {/* <Link href={`${url}`}><a>sectionname</a></Link> */}
                             </div>
                         </div>
-                        <div class="title0">
-                            <div class="title1">
-                                <a href=""><h6>title</h6></a>
+                        <div className="title0">
+                            <div className="title1">
+                                <Link href={`${url}`}><h6>{title}</h6></Link>
                             </div>
                         </div>
-                        <div class="magazine_no0">
-                            <div class="magazine_no1">
-                                <a href="">제 호</a>
+                        <div className="magazine_no0">
+                            <div className="magazine_no1">
+                                <Link href={`${url}`}><a>제 {ho}호</a></Link>
                             </div>
                         </div>
-                        <div class="prologue0">
-                            <div class="prologue1">
-                                <a href="">prologue</a>
+                        <div className="prologue0">
+                            <div className="prologue1">
+                                <Link href={`${url}`}><a>{prologue}</a></Link>
                             </div>
                         </div>
                     </div>

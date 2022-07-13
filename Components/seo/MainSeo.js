@@ -35,9 +35,6 @@ export default function MainSeo() {
             <script src={`${SVC_PATH_21}/js/utils.js`}></script>
             <script src="//www.hani.co.kr/section-homepage/svc/js/google_analytics.js"></script>
             <script type="text/javascript" src="//www.hani.co.kr/hani/api/hani_cnt/hani_cnt_loader.hani"></script>
-
-
-
             <link rel="stylesheet" href="https://img.hani.co.kr/section-image/22/bn_support/bn2022_event.css"/>
             
         </Head>
