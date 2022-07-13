@@ -13,7 +13,6 @@ import { BOOKDATA, FAMOUSDATA, LISTDATA } from "@/lib/constants";
 import { SWRConfig } from 'swr'
 
 export default function index({ fallback }) {
-
     return (
         <>
             <MainSeo />
@@ -61,14 +60,14 @@ export const getServerSideProps = async ( context ) => {
     const book = book_data.data;
 
     const contextRes = context.query['sec1'];
+    const urlType = contextRes.toLowerCase();
     const cline = context.query['cline'];
-    console.log(cline);
 
     let list_res;
     {
-        contextRes 
-        ? list_res = await fetch(`${LISTDATA}/${contextRes}`)
-        : list_res = await fetch(`${LISTDATA}/${contextRes}/${cline}`)
+        urlType
+        ? list_res = await fetch(`${LISTDATA}/${urlType}`)
+        : list_res = await fetch(`${LISTDATA}/${urlType}/${cline}`)
     }
     let list_data = await list_res.json();
 
