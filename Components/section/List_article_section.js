@@ -21,7 +21,7 @@ export default function List_article_section(){
                     <ul className='list_column'>
                         {
                         list.map((i, index) => (
-                            <Item_column list={i} />
+                            <Item_column list={i} key={index}/>
                         ))
                         }
                     </ul>

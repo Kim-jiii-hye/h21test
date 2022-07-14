@@ -6,7 +6,6 @@ import List_article_ad2 from "@/Components/section/List_article_ad2";
 import List_article_ad3 from "@/Components/section/List_article_ad3";
 import List_article_section from "@/Components/section/List_article_section";
 import Navigation_page from "@/Components/section/Navigation_page";
-import Navigation_section2 from "@/Components/section/Navigation_section2";
 import View_subscription from "@/Components/section/View_subscription";
 import MainSeo from "@/Components/seo/MainSeo";
 import { BOOKDATA, FAMOUSDATA, SERIESCOLUMNDATA } from "@/lib/constants";
@@ -20,7 +19,6 @@ export default function index({ fallback }) {
                 <div className="main0">
                     <div className="main1">
                         <HeaderVer2 />
-                        <Navigation_section2 />
                         <SWRConfig value = {{ fallback }}>
                             <div id="article_contents" className="article2c_contents">
                                 <div className="column_tb">

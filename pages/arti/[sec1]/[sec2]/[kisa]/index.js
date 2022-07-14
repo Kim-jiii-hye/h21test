@@ -1,7 +1,6 @@
 import HeaderVer2 from "@/Components/HeaderVer2";
 import Box_list_popular1 from "@/Components/section/Box_list_popular1";
 import Box_list_popular2 from "@/Components/section/Box_list_popular2";
-import Navigation_section2 from "@/Components/section/Navigation_section2";
 import View_subscription from "@/Components/section/View_subscription";
 import MainSeo from "@/Components/seo/MainSeo";
 import { BOOKDATA, FAMOUSDATA } from "@/lib/constants";
@@ -13,13 +12,14 @@ import View_article_ad3 from "@/Components/section/View_article_ad3";
 import Box_list_series from "@/Components/section/Box_list_series";
 import Box_list_column from "@/Components/section/Box_list_column";
 import View_article_head from "@/Components/section/View_article_head";
+import Navigation_section from "@/Components/section/Navigation_section";
 
 export default function index({ fallback, kisa_data }){
     let series_info_num;
     let column_info_num;
     const series_info = kisa_data.series_info;
     const column_info = kisa_data.column_info;
-    console.log(kisa_data)
+    const navi_section_num = kisa_data.sec;
 
     {
         (series_info) 
@@ -36,7 +36,11 @@ export default function index({ fallback, kisa_data }){
                 <div className="main0">
                     <div className="main1">
                         <HeaderVer2 />
-                        <Navigation_section2 />
+                        <Navigation_section 
+                            data0 = {''}
+                            data1 = {navi_section_num}
+                            type = {''}
+                        />
                         <SWRConfig value = {{ fallback }}>
                             <div id="article_contents" className="article2c_contents">
                                 <View_article_head />

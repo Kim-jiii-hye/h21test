@@ -26,6 +26,7 @@ export default function sub() {
                         <Navigation_section
                             data0 = {"고객센터"} 
                             data1 = {'FAQ'}
+                            type = {'other'}
                         />
                         <div id="customer_contents" className="etc_contents_menu">
                             <div className="contents0">

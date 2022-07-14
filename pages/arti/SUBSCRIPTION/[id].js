@@ -29,6 +29,7 @@ export default function Index() {
                         <Navigation_section 
                             data0 = {pagenum && page_name_list[0]}
                             data1 = {pagenum && page_name_list[parseInt(pagenum.slice('.html')[0])]}
+                            type = {'other'}
                         />
                         <div id="subscription_contents" className="etc_contents_menu">
                             <div className="contents0">

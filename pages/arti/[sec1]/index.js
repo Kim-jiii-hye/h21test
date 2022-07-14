@@ -6,13 +6,18 @@ import List_article_ad2 from "@/Components/section/List_article_ad2";
 import List_article_ad3 from "@/Components/section/List_article_ad3";
 import List_article_section from "@/Components/section/List_article_section";
 import Navigation_page from "@/Components/section/Navigation_page";
-import Navigation_section2 from "@/Components/section/Navigation_section2";
+import Navigation_section from "@/Components/section/Navigation_section";
 import View_subscription from "@/Components/section/View_subscription";
 import MainSeo from "@/Components/seo/MainSeo";
 import { BOOKDATA, FAMOUSDATA, LISTDATA } from "@/lib/constants";
+import { useRouter } from "next/router";
 import { SWRConfig } from 'swr'
 
 export default function index({ fallback }) {
+
+    const router = useRouter();
+    const section = router.query.sec1;
+    
     return (
         <>
             <MainSeo />
@@ -20,7 +25,11 @@ export default function index({ fallback }) {
                 <div className="main0">
                     <div className="main1">
                         <HeaderVer2 />
-                        <Navigation_section2 />
+                        <Navigation_section 
+                            data0 = {section}
+                            data1 = {''}
+                            type = {''}
+                        />
                         <SWRConfig value = {{ fallback }}>
                             <div id="article_contents" className="article2c_contents">
                                 <div className="column_tb">

@@ -1,16 +1,15 @@
 # Nextjs page h21
 
-
-### pages directory
+## pages directory
 #### arti
-* HO / RSS 는 지난호보기, RSS 페이지로 각각 존재
+* HO / RSS 는 <mark>지난호보기</mark>, <mark>RSS</mark> 페이지로 각각 존재
 ##### INTRODUCTION
 * 소개페이지로 현재는 1, 2, 3 .html 존재
 * dynamic import로 내용들은 Components/section 디렉토리에서 가져옴
 
 ---------------------------------------------------------------------------------
 
-### Components directory
+## Components directory
 * view/section/item
 * seo는 페이지별로 다를 수 있음
     * (ex.메인용 seo, 기사본문용 seo)
@@ -28,9 +27,9 @@
 
 ---------------------------------------------------------------------------------
 
-### lib directory
+## lib directory
 * constants.js에 전역변수로 사용되는 링크 선언
 
-### styles directory
+## styles directory
 * Componentst.module.css 기존에 태그에 지정된 style 속성들을 모아놓음
 * 스타일 분리 목적.

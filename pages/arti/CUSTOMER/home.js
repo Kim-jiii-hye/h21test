@@ -14,6 +14,7 @@ export default function home() {
                     <Navigation_section 
                         data0={"고객센터"} 
                         data1={''}
+                        type = {'other'}
                     />
                     <div id="customer_contents" className="etc_contents">
                         <div className="contents0">
