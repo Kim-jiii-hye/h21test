@@ -24,7 +24,7 @@ export default function View_introduction_1() {
                         <td>ejung@hani.co.kr</td>
                     </tr>
                     <tr>
-                        <th rowspan="5">기획편집팀</th>
+                        <th rowSpan="5">기획편집팀</th>
                         <td>구둘래 팀장</td>
                         <td>anyone@hani.co.kr</td>
                     </tr>
@@ -45,7 +45,7 @@ export default function View_introduction_1() {
                         <td>godjimin@hani.co.kr</td>
                     </tr>
                     <tr>
-                        <th rowspan="5">취재1팀</th>
+                        <th rowSpan="5">취재1팀</th>
                         <td>이승준 팀장</td>
                         <td>gamja@hani.co.kr</td>
                     </tr>
@@ -66,7 +66,7 @@ export default function View_introduction_1() {
                         <td>whorun@hani.co.kr</td>
                     </tr>
                     <tr>
-                        <th rowspan="4">취재2팀</th>
+                        <th rowSpan="4">취재2팀</th>
                         <td>박현정 팀장</td>
                         <td>saram@hani.co.kr</td>
                     </tr>
@@ -83,7 +83,7 @@ export default function View_introduction_1() {
                         <td>sol@hani.co.kr</td>
                     </tr>
                     <tr>
-                        <th rowspan="2">교열팀</th>
+                        <th rowSpan="2">교열팀</th>
                         <td>서윤희 기자</td>
                         <td>seo@hani.co.kr</td>
                     </tr>
@@ -92,7 +92,7 @@ export default function View_introduction_1() {
                         <td>bom1@hani.co.kr</td>
                     </tr>
                     <tr>
-                        <th rowspan="5">사진</th>
+                        <th rowSpan="5">사진</th>
                         <td>이정우 부장</td>
                         <td> woo@hani.co.kr</td>
                     </tr>
