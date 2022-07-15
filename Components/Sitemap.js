@@ -32,7 +32,7 @@ export default function Sitemap() {
 					<ul	className="page">
 						<li	className="column">
 							<ul	className="column">
-								<li><strong><Link href="/arti/"><a>뉴스</a></Link></strong></li>
+								<li><strong><Link href="/arti/NEWS/"><a>뉴스</a></Link></strong></li>
 								<li><span><Link href="/arti/SERIES/2337/"><a>표지이야기</a></Link></span></li>
 								<li><span><Link href="/arti/SERIES/2338/"><a>특집</a></Link></span></li>
 								<li><span><Link href="/arti/politics/"><a>정치</a></Link></span></li>

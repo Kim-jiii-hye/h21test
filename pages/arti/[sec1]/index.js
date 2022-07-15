@@ -69,7 +69,10 @@ export const getServerSideProps = async ( context ) => {
     const book = book_data.data;
 
     const contextRes = context.query['sec1'];
-    const urlType = contextRes.toLowerCase();
+    let urlType = contextRes.toLowerCase();
+    // {
+    //     urlType === 'NEWS' ? urlType = 'h21_news_main' : <></>
+    // }
     const cline = context.query['cline'];
 
     let list_res;

@@ -9,7 +9,7 @@ export default function MainSeo() {
 
     return (
         <Head>
-            <meta charset="UTF-8" />
+            <meta charSet="UTF-8" />
             <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
             <meta name="keywords" content="한겨레21, 한겨레" />
             <meta name="copyright" content="Hankyoreh, Inc" />

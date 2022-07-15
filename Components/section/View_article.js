@@ -2,7 +2,7 @@ import useSWR from 'swr';
 import styled from "styled-components";
 import { FacebookShareButton, FacebookIcon, TwitterIcon, TwitterShareButton } from "react-share";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 const buttonContainer = styled.div`
     display: grid;
@@ -47,16 +47,13 @@ export default function View_article() {
     }
     stringToImg(kisabody, 1);
     
-    const fontSizeRef = useRef(16);
-    const [fontchk, setFontchk] = useState(false);
+    const [controlfont, setControlfont] = useState(16);
 
     const increaseFont = () => {
-        fontSizeRef.current += 2;
-        setFontchk(!fontchk);
+        setControlfont(controlfont+=2);
     }
     const decreaseFont = () => {
-        fontSizeRef.current -= 2;
-        setFontchk(!fontchk);
+        setControlfont(controlfont-=2);
     }
 
     return (
@@ -64,10 +61,10 @@ export default function View_article() {
             <div className="article-tools">
                 <buttonContainer>
                     <FacebookShareButton url={currentUrl}>
-                        <FacebookIcon size={30} round={true} borderRadius={20}></FacebookIcon>
+                        <FacebookIcon size={30} round={true} borderRadius={30}></FacebookIcon>
                     </FacebookShareButton>
                     <TwitterShareButton url={currentUrl}>
-                        <TwitterIcon size={30} round={true} borderRadius={20}></TwitterIcon>
+                        <TwitterIcon size={30} round={true} borderRadius={30}></TwitterIcon>
                     </TwitterShareButton>
                     <CopyToClipboard text={currentUrl}>
                         <URLShareButton>URL</URLShareButton>
@@ -83,7 +80,7 @@ export default function View_article() {
                 </p>
             </div>
             
-            <div className="article_body" style={{fontSize: `${fontSizeRef.current}px`}}>
+            <div className="article_body" style={{fontSize: `${controlfont}px`}}>
                 <div className="text" dangerouslySetInnerHTML={{ __html: bodydataRes }}></div>
                 {/* <Huwon_event /> */}
             </div>
