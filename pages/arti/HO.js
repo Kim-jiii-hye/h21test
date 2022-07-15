@@ -1,5 +1,4 @@
 import HeaderVer2 from "@/Components/HeaderVer2";
-import Navigation_section1 from "@/Components/section/Navigation_section1";
 import MainSeo from "@/Components/seo/MainSeo";
 
 export default function HO() {

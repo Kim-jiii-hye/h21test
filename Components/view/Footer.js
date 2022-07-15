@@ -15,8 +15,8 @@ export default function Footer() {
                         <li>등록번호:서울, 아01707  <span>|</span></li>
                         <li>등록일자:2017-7-19 <span>|</span></li>
                         <li>발행인:김현대 <span>|</span></li>
-                        <li>편집인:강대성  <span>|</span></li>
-                        <li>청소년보호책임자:강대성 <span>|</span></li>
+                        <li>편집인:류이근  <span>|</span></li>
+                        <li>청소년보호책임자:류이근 <span>|</span></li>
                         <li>주소:서울특별시 마포구 효창목길 6 <span>|</span></li>
                         <li>고객센터:1566-9595</li>
                         <li className="copyright">ⓒ <strong>The Hankyoreh.</strong> All Rights Reserved.</li>
