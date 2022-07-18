@@ -3,6 +3,10 @@ import { SVC_PATH } from "@/lib/constants";
 import Link from 'next/link';
 
 export default function Navigation_page({ totalpage, page }) {
+
+    const btn_pre = SVC_PATH + '/image/bt_pre.png';
+    const btn_next= SVC_PATH + '/image/bt_next.png';
+
     const router = useRouter();
     let router_url = router.asPath;
     const url = router_url.split('?');
@@ -35,7 +39,6 @@ export default function Navigation_page({ totalpage, page }) {
             }
             break;
     }
-
     let hasPre = (start > 1);
     let hasNext = (end < totalpage);
     
@@ -60,11 +63,11 @@ export default function Navigation_page({ totalpage, page }) {
         <nav className="navigation_page">
             <ul className="navigation_page">
                 {
-                    hasPre && <li><Link href={`${url[0]}/?cline=${start - 1}`}><img src={`${SVC_PATH}/image/bt_pre.png`} alt="이전 페이지" title="이전 페이지" /></Link></li>
+                    hasPre && <li><Link href={`${url[0]}/?cline=${start - 1}`}><img src={`${btn_pre}`} alt="이전 페이지" title="이전 페이지" /></Link></li>
                 }
                 {pageArr()}
                 {
-                    hasNext && <li><Link href={`${url[0]}/?cline=${end + 1}`}><img src={`${SVC_PATH}/image/bt_next.png`} alt="다음 페이지" title="다음 페이지" /></Link></li>
+                    hasNext && <li><Link href={`${url[0]}/?cline=${end + 1}`}><img src={`${btn_next}`} alt="다음 페이지" title="다음 페이지" /></Link></li>
                 }
             </ul>
         </nav>

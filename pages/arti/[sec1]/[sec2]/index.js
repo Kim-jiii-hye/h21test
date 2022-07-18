@@ -11,7 +11,11 @@ import MainSeo from "@/Components/seo/MainSeo";
 import { BOOKDATA, FAMOUSDATA, SERIESCOLUMNDATA } from "@/lib/constants";
 import { SWRConfig } from 'swr'
 
-export default function index({ fallback }) {
+export default function index({ fallback, series_list_data }) {
+
+    const totalpage = series_list_data.totalpage;
+    const page = parseInt(series_list_data.page);
+
     return (
         <>
             <MainSeo />
@@ -27,7 +31,7 @@ export default function index({ fallback }) {
                                             <section id="section_list_article" className="list_article">
                                                 <h4 className="hidden">기사일람</h4>
                                                 <List_article_section />
-                                                {/* <Navigation_page totalpage={totalpage} page={page} /> */}
+                                                <Navigation_page totalpage={totalpage} page={page} />
                                                 <List_article_ad1 />
                                             </section>
                                         </div>
@@ -64,10 +68,9 @@ export const getServerSideProps = async ( context ) => {
 
     let series_list_res;
     {
-        sec1Link 
+        !cline 
         ? series_list_res = await fetch(`${SERIESCOLUMNDATA}/${sec1Link}/${sec2Link}`)
-        // : list_res = await fetch(`${LISTDATA}/${sec1Link}/${sec2Link}/${cline}`)
-        : series_list_res = ''
+        : series_list_res = await fetch(`${SERIESCOLUMNDATA}/${sec1Link}/${sec2Link}/${cline}`)
     }
     const series_list_data = await series_list_res.json();
 

@@ -13,10 +13,12 @@ import { BOOKDATA, FAMOUSDATA, LISTDATA } from "@/lib/constants";
 import { useRouter } from "next/router";
 import { SWRConfig } from 'swr'
 
-export default function index({ fallback }) {
+export default function index({ fallback, list_data }) {
 
     const router = useRouter();
     const section = router.query.sec1;
+    const totalpage = list_data.totalpage;
+    const page = parseInt(list_data.page);
     
     return (
         <>
@@ -38,7 +40,7 @@ export default function index({ fallback }) {
                                             <section id="section_list_article" className="list_article">
                                                 <h4 className="hidden">기사일람</h4>
                                                 <List_article_section />
-                                                {/* <Navigation_page totalpage={totalpage} page={page} /> */}
+                                                <Navigation_page totalpage={totalpage} page={page} />
                                                 <List_article_ad1 />
                                             </section>
                                         </div>
@@ -74,13 +76,14 @@ export const getServerSideProps = async ( context ) => {
     //     urlType === 'NEWS' ? urlType = 'h21_news_main' : <></>
     // }
     const cline = context.query['cline'];
-
     let list_res;
     {
-        urlType
+        !cline 
         ? list_res = await fetch(`${LISTDATA}/${urlType}`)
-        : list_res = await fetch(`${LISTDATA}/${urlType}/${cline}`)
+        : list_res = await fetch(`${LISTDATA}/${urlType}/${cline}`)      
+
     }
+    
     let list_data = await list_res.json();
 
     return {

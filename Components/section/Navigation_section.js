@@ -7,11 +7,12 @@ export default function Navigation_section({ data0, data1, type }) {
     const router = useRouter();
     const intro_chk = router.route.includes('INTRODUCTION');
     const subscrip_chk = router.route.includes('SUBSCRIPTION');
+    const customer_chk = router.route.includes('CUSTOMER');
 
     // data0 데이터의 경우 소개와 구독 페이지는 sectionlist변경 필요 없음
     let data0_kr;
     {
-        (intro_chk || subscrip_chk)
+        (intro_chk || subscrip_chk || customer_chk)
             ? data0_kr = data0 :
             data0 ? data0_kr = sectionlist[data0]['kr'] : <></>
     }
