@@ -57,7 +57,7 @@ export default function Item_home_sub({ homesubdata }) {
                         <div className="title0">
                             <div className="title1">
                                 <Link href={url}>
-                                    <a><h6>{title}</h6></a>
+                                    <a><h6 dangerouslySetInnerHTML={{__html:title}}></h6></a>
                                 </Link>
                             </div>
                         </div>

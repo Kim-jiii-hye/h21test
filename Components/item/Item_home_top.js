@@ -14,7 +14,7 @@ export default function Item_home_top() {
                     <div className="title0">
                         <div className="title1">
                             <Link href={ main_top_data.url }>
-                                <a><h6>{ main_top_data.title }</h6></a>
+                                <a><h6 dangerouslySetInnerHTML={{__html:main_top_data.title}}></h6></a>
                             </Link>
                         </div>
                     </div>

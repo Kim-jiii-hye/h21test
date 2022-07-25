@@ -12,6 +12,7 @@ export default function Item_home_main({ homemaindata }) {
     const prologue = homemaindata.prologue;
     const titleheader = homemaindata.titleheader;
     const titleheaderurl = homemaindata.titleheaderurl;
+    
 
     const arrow_right = SVC_PATH + '/image/arrow_right_small.png';
 
@@ -62,12 +63,12 @@ export default function Item_home_main({ homemaindata }) {
                     <div className="image_on">
                         <div className="title0">
                             <div className="title1">
-                                <Link href={url}><a>{title}</a></Link>
+                                <Link href={url}><a dangerouslySetInnerHTML={{__html: title}}></a></Link>
                             </div>
                         </div>
                         <div className="prologue0">
                             <div className="prologue1">
-                                <Link href={url}><a>{prologue}</a></Link>
+                                <Link href={url}><a dangerouslySetInnerHTML={{__html: prologue}}></a></Link>
                             </div>
                         </div>
                     </div>
