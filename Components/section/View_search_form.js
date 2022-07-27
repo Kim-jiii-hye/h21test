@@ -12,7 +12,7 @@ export default function View_search_form() {
     return (
         <div id="search_form">
             <div className="open_search">
-                <a href="http://search.hani.co.kr/Search" title="검색" target="_blank" data-is-opened="F" onClick={() => { setVisible(!visible) }}>
+                <a href="http://search.hani.co.kr/search" title="검색" target="_blank" data-is-opened="F" onClick={() => { setVisible(!visible) }}>
                     <Image src={searchbtn} alt="검색" title="검색" width={20} height={20} />
                 </a>
             </div>
@@ -21,7 +21,7 @@ export default function View_search_form() {
                 <div className="form_search">
                     <div className="form0">
                         <div className="form1">
-                            <form name="frmsearch" method="get" action="http://121.254.212.141:8000/h21">
+                            <form name="frmsearch" method="get" action="http://search.hani.co.kr/search">
                                 <input type="hidden" name="command" value="query" />
                                 <input type="hidden" name="media" value="magazine" />
                                 <input type="text" name="searchword" value="" title="검색어" className="text" />

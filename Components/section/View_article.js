@@ -2,15 +2,15 @@ import useSWR from 'swr';
 import styled from "styled-components";
 import { FacebookShareButton, FacebookIcon, TwitterIcon, TwitterShareButton } from "react-share";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const buttonContainer = styled.div`
+const ButtonContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 48px);
     grid-column-gap: 8px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 16px;
+
 `
 const URLShareButton = styled.button`
 	width: 30px;
@@ -56,10 +56,62 @@ export default function View_article() {
         setControlfont(controlfont-=2);
     }
 
+    useEffect(() => {
+        if( typeof window !== 'undefined'){
+            createKakaoButton();
+        }
+    }, [])
+
+    const createKakaoButton = () => {
+        if (window.Kakao) {
+          const kakao = window.Kakao;
+    
+          if (!kakao.isInitialized()) {
+            // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
+            kakao.init(`e4535029ec4a0922a5042a26645178fc`);
+          }
+    
+          kakao.Link.createDefaultButton({
+            // Render 부분 id=kakao-link-btn 을 찾아 그부분에 렌더링을 합니다
+            container: '#kakao-link-btn',
+            objectType: 'feed',
+            content: {
+              title: '타이틀',
+              description: '#리액트 #카카오 #공유버튼',
+              imageUrl: 'IMAGE_URL', // i.e. process.env.FETCH_URL + '/logo.png'
+              link: {
+                mobileWebUrl: window.location.href,
+                webUrl: window.location.href,
+              },
+            },
+            social: {
+              likeCount: 77,
+              commentCount: 55,
+              sharedCount: 333,
+            },
+            buttons: [
+              {
+                title: '웹으로 보기',
+                link: {
+                  mobileWebUrl: window.location.href,
+                  webUrl: window.location.href,
+                },
+              },
+              {
+                title: '앱으로 보기',
+                link: {
+                  mobileWebUrl: window.location.href,
+                  webUrl: window.location.href,
+                },
+              },
+            ],
+          })
+        }
+    }
     return (
         <article>
             <div className="article-tools">
-                <buttonContainer>
+                <ButtonContainer>
                     <FacebookShareButton url={currentUrl}>
                         <FacebookIcon size={30} round={true} borderRadius={30}></FacebookIcon>
                     </FacebookShareButton>
@@ -69,7 +121,14 @@ export default function View_article() {
                     <CopyToClipboard text={currentUrl}>
                         <URLShareButton>URL</URLShareButton>
                     </CopyToClipboard>
-                </buttonContainer>
+                    {/* Kakao share button */}
+                    <div className="kakao-share-button">
+                    {/* Kakao share button */}
+                    <button id="kakao-link-btn">
+                        <img src="/icons/kakao.png" alt="kakao-share-icon" />
+                    </button>
+                    </div>
+                </ButtonContainer>
                 <p className="font">
                     <a title="글씨크게" className="large" onClick={() => {increaseFont()}}>
                         <span className="blind">크게</span>

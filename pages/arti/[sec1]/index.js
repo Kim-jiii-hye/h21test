@@ -11,6 +11,8 @@ import View_subscription from "@/Components/section/View_subscription";
 import MainSeo from "@/Components/seo/MainSeo";
 import { BOOKDATA, FAMOUSDATA, LISTDATA } from "@/lib/constants";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { SWRConfig } from 'swr'
 
 export default function index({ fallback, list_data }) {
@@ -19,6 +21,15 @@ export default function index({ fallback, list_data }) {
     const section = router.query.sec1;
     const totalpage = list_data.totalpage;
     const page = parseInt(list_data.page);
+
+    const [ref, inView] = useInView();
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        if(inView && !loading){
+            console.log(inView);
+        }
+    }, [inView, loading]);
     
     return (
         <>
@@ -33,7 +44,7 @@ export default function index({ fallback, list_data }) {
                             type = {''}
                         />
                         <SWRConfig value = {{ fallback }}>
-                            <div id="article_contents" className="article2c_contents">
+                            <div id="article_contents" className="article2c_contents" ref={ref}>
                                 <div className="column_tb">
                                     <div className="column_tr">
                                         <div className="column_tc column0">
@@ -94,6 +105,7 @@ export const getServerSideProps = async ( context ) => {
                 '/api/list': list_data
             },
             list_data
+
         },
     }
 }

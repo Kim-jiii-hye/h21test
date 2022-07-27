@@ -20,8 +20,8 @@ export default function Header() {
 	// 		console.log(data);
 	// 	}
 	// }
-	
-	console.log(getCookies(ctx, 'CLTCOOKINFO'));
+	getCookies('CLTCOOKINFO')
+	console.log();
 	return (
 		<header id="viewHeader">
 			<div className="header0">

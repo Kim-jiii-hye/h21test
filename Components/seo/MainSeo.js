@@ -37,6 +37,7 @@ export default function MainSeo() {
             <script type="text/javascript" src="//www.hani.co.kr/hani/api/hani_cnt/hani_cnt_loader.hani"></script>
             <link rel="stylesheet" href="https://img.hani.co.kr/section-image/22/bn_support/bn2022_event.css"/>
             
+            <script src={`${process.env.REACT_APP_KAKAO_API}`}></script>
         </Head>
     )
 }
