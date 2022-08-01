@@ -13,6 +13,7 @@ import Box_list_series from "@/Components/section/Box_list_series";
 import Box_list_column from "@/Components/section/Box_list_column";
 import View_article_head from "@/Components/section/View_article_head";
 import Navigation_section from "@/Components/section/Navigation_section";
+import { useEffect } from "react";
 
 export default function index({ fallback, kisa_data }){
     let series_info_num;
@@ -28,6 +29,22 @@ export default function index({ fallback, kisa_data }){
             ? column_info_num = column_info.data.length
             : <></>
     }
+    useEffect(() => {
+        let j, e;
+        if (typeof window){
+            j, e = document.getElementsByClassName('LivereTag');
+            j = document.createElement('script');
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';                									
+            j.async = true;
+            console.log(j);
+        }
+        
+        window.livereOptions = {                                                   
+            refer: 'https://h21.hani.co.kr/arti/politics/politics_general/52343.html',
+            site: 'https://h21.hani.co.kr/arti/politics/politics_general/52343.html'
+        }
+        
+    }, [])
 
     return (
         <>
@@ -59,6 +76,18 @@ export default function index({ fallback, kisa_data }){
                                             <View_article_ad3 />
                                             <Box_list_popular2 />
                                         </div>
+                                    </div>
+                                </div>
+                                <div className="contents0">
+                                    <div className="contents1">
+                                        <section className="article_reply">
+                                            <div className="reply0">
+                                                <div id="lv-container" data-id="han" data-uid="NTg3LzE0MjU3LzY2MQ==" >             
+                                                    <div className="LivereTag"></div>
+                                                    <noscript>Please activate JavaScript for write a comment in LiveRe.</noscript>								
+                                                </div>                                                                             								
+                                            </div>
+                                        </section>
                                     </div>
                                 </div>
                             </div>

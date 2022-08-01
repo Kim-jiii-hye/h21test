@@ -1,76 +1,95 @@
 import MainSeo from "@/Seo/MainSeo";
-import Carousel from "react-material-ui-carousel";
-import { Paper, Button } from '@mui/material';
-import Famoushani from "@/Components/test/Famoushani";
+// import Carousel from "react-material-ui-carousel";
+import Carousel from "react-simply-carousel";
+import { useState } from "react";
 
-// function Example(props)
-// {
-//     var items = [
-//         {
-//             name: "Random Name #1",
-//             description: "Probably the most random thing you have ever seen!"
-//         },
-//         {
-//             name: "Random Name #2",
-//             description: "Hello World!"
-//         }
-//     ]
+export default function hotest({ holist }) {
+    const [activeSlideIndex, setActiveSlideIndex ] = useState(0);
+    const [data, setData] = useState('');
 
-//     return (
+    const clk = (newActiveSlideIndex) => {
+        setActiveSlideIndex(newActiveSlideIndex);
+    }
 
-//             {
-//                 items.map( (item, i) => <Item key={i} item={item} /> )
-//             }
-//         </Carousel>
-//     )
-// }
-function Item(props) {
-    return (
-        <Paper>
-            <h2>{props.item.name}</h2>
-            <p>{props.item.description}</p>
-
-            <Button className="CheckButton">
-                Check it out!
-            </Button>
-        </Paper>
-    )
-}
-export default function hotest({ famousdata }) {
+    const click_data = async (hodata) => {
+        const res = await fetch(`/ho/view/${hodata}`);
+        const data = await res.json();
+        const data_idx = data.data.index;
+        setData(data_idx);
+    }
 
     return (
         <>
             <MainSeo />
-            <div>
-                <h4>N호 주요뉴스</h4>
-            </div>
-            
-               <Carousel>
-                    <div className="row_home_sub">
-                    {
-                        famousdata.data.map((i, index) => (
-                            (index <= 5) ?
-                                <Paper>
-                                    <Famoushani data={i} />
-                                    <Button className="CheckButton">
-                                        Check it out!
-                                    </Button>
-                                </Paper>
-                                : <></>
-                        ))
+            <Carousel
+                activeSlideIndex={activeSlideIndex}
+                onRequestChange={clk}
+                itemsToShow={4}
+                itemsToScroll={4}
+                forwardBtnProps={{
+                    children: ">",
+                    style: {
+                      width: 60,
+                      height: 60,
+                      minWidth: 60,
+                      alignSelf: "center"
                     }
-                    </div>
-                </Carousel>
-            
+                  }}
+                backwardBtnProps={{
+                    children: "<",
+                    style: {
+                      width: 60,
+                      height: 60,
+                      minWidth: 60,
+                      alignSelf: "center"
+                    }
+                }}
+            >
+                {
+                    holist.data.map((i, index) => (
+                        <div>
+                            <div className="top">
+                                <div className="no">제 {i.ho}호</div>
+                                <div className="date">{i.startdt}</div>
+                            </div>
+                            <div className="middle">
+                                <div className="image" onClick={() => click_data(`${i.ho}`)}>
+                                    <div className="image0" style={{ width:'300px', height:'300px', backgroundImage: `url(${i.coverimg})`}}>
+                                        <div className="image_ratio"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </Carousel>
+            <div id="magazine_index"> 
+            {
+            data &&
+            data.map((i, index) => (
+                <li className="group" key={index}>
+                    <h4>{i.title}</h4>
+                    <ul className="group">
+                        {
+                            i.data.map(j => (
+                                <h6><a>{j.title}</a></h6>
+                            ))
+                        }
+                        
+                    </ul>
+                </li>
+            ))
+            }
+            </div>
         </>
     )
 }
 export const getServerSideProps = async () => {
-    const data = await fetch('https://www.hani.co.kr/section-homepage/gcp-ranks/news/news-all.json');
-    const famousdata = await data.json();
+    const data = await fetch('http://mapi_h21-master.hani.co.kr/ho/listall');
+    const holist = await data.json();
     return {
         props: {
-            famousdata
+            holist
         }
     }
 }

@@ -26,6 +26,10 @@ module.exports = {
         {
           source:'/politics/:id',
           destination: `http://mapi_h21-master.hani.co.kr/on/sec/list/politics/:id`
+        },
+        {
+          source:'/ho/view/:id',
+          destination: `http://mapi_h21-master.hani.co.kr/ho/view/:id`
         }
       ]
       
